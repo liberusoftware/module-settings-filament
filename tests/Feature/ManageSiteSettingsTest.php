@@ -17,7 +17,7 @@ use Livewire\Livewire;
  * settings class with any property missing throws before the page can mount, so
  * a partial fixture would fail on the fixture rather than on the page.
  */
-beforeEach(function () {
+beforeEach(function (): void {
     $values = [
         'site_name' => 'Analytical Engines',
         'site_email' => 'hello@example.test',
@@ -46,7 +46,7 @@ beforeEach(function () {
     }
 });
 
-it('mounts with the stored settings loaded', function () {
+it('mounts with the stored settings loaded', function (): void {
     $this->actingAs(TestUser::factory()->create());
 
     // assertFormSet rather than assertSee: a settings page's values live in the
@@ -61,7 +61,7 @@ it('mounts with the stored settings loaded', function () {
         ]);
 });
 
-it('offers every discovered theme in the theme select', function () {
+it('offers every discovered theme in the theme select', function (): void {
     // The select's options come from ThemeManager, so this fails if the page
     // stops resolving it or the discovery returns nothing — which is what would
     // happen if the theme packages were not installed alongside.

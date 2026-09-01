@@ -13,14 +13,19 @@ use Liberu\Foundation\Theme\Services\ThemeManager;
 
 class ManageSiteSettings extends SettingsPage
 {
+    #[\Override]
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-cog-6-tooth';
 
+    #[\Override]
     protected static string $settings = SiteSettings::class;
 
-    protected static string|\UnitEnum|null $navigationGroup = 'Preferences';
+    #[\Override]
+    protected static string|\UnitEnum|null $navigationGroup = 'Settings';
 
+    #[\Override]
     protected static ?string $title = 'Site Settings';
 
+    #[\Override]
     protected static ?string $navigationLabel = 'Site Settings';
 
     public function form(Schema $schema): Schema
